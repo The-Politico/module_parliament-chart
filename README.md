@@ -4,6 +4,8 @@
 
 A parliament-style seat chart, useful for showing congressional membership.
 
+[Demo.](https://the-politico.github.io/module_parliament-chart/)
+
 A [reusable chart](https://github.com/The-Politico/generator-politico-graphics) module made with ❤️ at POLITICO.
 
 ![](preview.png)
