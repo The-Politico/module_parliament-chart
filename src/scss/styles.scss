@@ -1,0 +1,16 @@
+@import 'variables';
+@import 'chart';
+
+@import '~politico-style/scss/sketch/main.scss';
+
+#{$ParliamentChart-container} {
+  width: 250px;
+  min-width: 290px;
+  height:400px;
+  margin: 20px auto;
+  min-height: calc(100vh - 165px);
+}
+
+nav.global b{
+  color: $politico-dark-red;
+}

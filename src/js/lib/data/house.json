@@ -1,0 +1,30 @@
+[
+    {
+      "party": "solid-d",
+      "seats": 138
+    },
+    {
+      "party": "likely-d",
+      "seats": 45
+    },
+    {
+      "party": "lean-d",
+      "seats": 19
+    },
+    {
+      "party": "toss-up",
+      "seats": 36
+    },
+    {
+      "party": "lean-r",
+      "seats": 8
+    },
+    {
+      "party": "likely-r",
+      "seats": 28
+    },
+    {
+      "party": "solid-r",
+      "seats": 161
+    }
+]
