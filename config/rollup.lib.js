@@ -22,13 +22,14 @@ const babelOpts = {
 
 export default {
   input: path.resolve(process.cwd(), 'src/js/lib/global.js'),
-  external: ['d3'],
+  external: ['d3', 'prop-types'],
   output: {
     file: path.resolve(process.cwd(), pkg.main),
     format: 'iife',
     name: 'ParliamentChart',
     globals: {
       d3: 'd3',
+      'prop-types': 'PropTypes',
     },
   },
   plugins: [

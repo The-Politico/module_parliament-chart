@@ -3567,6 +3567,10 @@ hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
 
+hex-rgb@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/hex-rgb/-/hex-rgb-3.0.0.tgz#bdff98ce1c18daec8ed87797fe13b02831a9515a"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -5299,13 +5303,14 @@ pluralize@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
 
-politico-style@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/politico-style/-/politico-style-2.0.0.tgz#103bc10ee4c51ee131d65010d373e9aff006ddf3"
+politico-style@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/politico-style/-/politico-style-3.0.2.tgz#1c0ac2aa9952060111fd1ab823e826c773aaea8e"
   dependencies:
     bootstrap "^4.1.2"
     bootstrap-sass "^3.3.7"
     classnames "^2.2.6"
+    hex-rgb "^3.0.0"
     lodash "^4.17.10"
     prop-types "^15.6.2"
 

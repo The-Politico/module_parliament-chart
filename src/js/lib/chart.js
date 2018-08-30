@@ -1,7 +1,10 @@
 import d3 from './utils/d3';
 import merge from 'lodash/merge';
+import { Colors } from 'politico-style';
 
 import defaultData from './data/house.json';
+
+const { demgop } = Colors.elections;
 
 const defaultColorScale = d3.scaleOrdinal()
   .domain([
@@ -13,9 +16,9 @@ const defaultColorScale = d3.scaleOrdinal()
     'likely-r',
     'solid-r',
   ]).range([
-    '#3571C0',
-    '#7392d0',
-    '#D2D9F0',
+    demgop.demgop0.hex,
+    demgop.demgop2.hex,
+    demgop.demgop3.hex,
     'lightgrey',
     '#FFD8CD',
     '#FFB19C',

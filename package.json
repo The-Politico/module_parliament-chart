@@ -13,8 +13,9 @@
   "homepage": "",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js",
-    "build": "npm-run-all -s build-esm build-docs",
+    "build": "npm-run-all -s build-esm build-lib build-docs",
     "build-esm": "rollup --config config/rollup.esm.js",
+    "build-lib": "rollup --config config/rollup.lib.js",
     "build-docs": "webpack --mode=production --config config/webpack.docs.js"
   },
   "files": [
@@ -58,7 +59,7 @@
     "npm-run-all": "^4.1.3",
     "open": "^0.0.5",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
-    "politico-style": "^2.0.0",
+    "politico-style": "^3.0.2",
     "portfinder": "^1.0.17",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
