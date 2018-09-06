@@ -13,9 +13,8 @@
   "homepage": "",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js",
-    "build": "npm-run-all -s build-esm build-lib build-docs",
+    "build": "npm-run-all -s build-esm build-docs",
     "build-esm": "rollup --config config/rollup.esm.js",
-    "build-lib": "rollup --config config/rollup.lib.js",
     "build-docs": "webpack --mode=production --config config/webpack.docs.js"
   },
   "files": [
@@ -26,6 +25,7 @@
   "dependencies": {
     "d3": "*",
     "d3-selection-multi": "^1.0.1",
+    "lodash": "^4.17.10",
     "whatwg-fetch": "*"
   },
   "devDependencies": {

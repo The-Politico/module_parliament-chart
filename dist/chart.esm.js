@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import hexRgb from 'hex-rgb';
 import merge from 'lodash/merge';
+import pullAll from 'lodash/pullAll';
 
 selection.prototype.moveToFront = function () {
   return this.each(function () {
@@ -792,30 +793,18 @@ var index$1 = {
 };
 
 var defaultData = [{
-  "party": "solid-d",
+  "party": "dem",
   "seats": 138
 }, {
-  "party": "likely-d",
+  "party": "undecided",
+  "seats": 0
+}, {
+  "party": "gop",
   "seats": 45
-}, {
-  "party": "lean-d",
-  "seats": 19
-}, {
-  "party": "toss-up",
-  "seats": 36
-}, {
-  "party": "lean-r",
-  "seats": 8
-}, {
-  "party": "likely-r",
-  "seats": 28
-}, {
-  "party": "solid-r",
-  "seats": 161
 }];
 
 var demgop$1 = index$1.elections.demgop;
-var defaultColorScale = d3.scaleOrdinal().domain(['solid-d', 'likely-d', 'lean-d', 'toss-up', 'lean-r', 'likely-r', 'solid-r']).range([demgop$1.demgop0.hex, demgop$1.demgop2.hex, demgop$1.demgop3.hex, 'lightgrey', '#FFD8CD', '#FFB19C', '#FE5C40']);
+var defaultColorScale = d3.scaleOrdinal().domain(['dem', 'gop', 'undecided']).range([demgop$1.demgop0.hex, demgop$1.gopdem0.hex, 'lightgrey']);
 var chart = (function () {
   return {
     /**
@@ -866,7 +855,11 @@ var chart = (function () {
           var innerHeight = innerWidth / 2; // Must be square;
 
           var outerParliamentRadius = innerWidth / 2;
-          var innerParliamentRadius = outerParliamentRadius * props.radiusCoef;
+          var innerParliamentRadius = outerParliamentRadius * props.radiusCoef; // Remove any groups with zero seats
+
+          pullAll(data, data.filter(function (d) {
+            return props.seatsAccessor(d) === 0;
+          }));
           var nSeats = data.reduce(function (a, b) {
             return a + props.seatsAccessor(b);
           }, 0);

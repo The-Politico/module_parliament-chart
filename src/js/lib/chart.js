@@ -1,6 +1,7 @@
 import d3 from './utils/d3';
 import merge from 'lodash/merge';
 import { Colors } from 'politico-style';
+import pullAll from 'lodash/pullAll';
 
 import defaultData from './data/house.json';
 
@@ -8,21 +9,13 @@ const { demgop } = Colors.elections;
 
 const defaultColorScale = d3.scaleOrdinal()
   .domain([
-    'solid-d',
-    'likely-d',
-    'lean-d',
-    'toss-up',
-    'lean-r',
-    'likely-r',
-    'solid-r',
+    'dem',
+    'gop',
+    'undecided',
   ]).range([
     demgop.demgop0.hex,
-    demgop.demgop2.hex,
-    demgop.demgop3.hex,
+    demgop.gopdem0.hex,
     'lightgrey',
-    '#FFD8CD',
-    '#FFB19C',
-    '#FE5C40',
   ]);
 
 export default () => ({
@@ -67,6 +60,9 @@ export default () => ({
         const innerHeight = innerWidth / 2; // Must be square;
         const outerParliamentRadius = innerWidth / 2;
         const innerParliamentRadius = outerParliamentRadius * props.radiusCoef;
+
+        // Remove any groups with zero seats
+        pullAll(data, data.filter(d => props.seatsAccessor(d) === 0));
 
         const nSeats = data.reduce((a, b) => a + props.seatsAccessor(b), 0);
 
